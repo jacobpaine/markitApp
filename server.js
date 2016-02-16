@@ -1,11 +1,17 @@
 'use strict';
 const express = require("express");
 const app = express();
+var cool = require('cool-ascii-faces');
 const bodyParser = require('body-parser');
 // const mongoose = require('mongoose');
 
 const routes = require('./routes/');
-const PORT = process.env.PORT || 3000; // eslint-disable-line no-magic-numbers
+const PORT = process.env.PORT || 5000; // eslint-disable-line no-magic-numbers
+//const PORT = process.env.PORT || 5000; // eslint-disable-line no-magic-numbers
+
+//Heroku tutorial.
+app.set(PORT, (process.env.PORT || 5000)); // eslint-disable-line no-magic-numbers
+app.use(express.static(__dirname + '/public'));
 
 // const MONGODB_HOST = process.env.MONGODB_HOST || 'localhost';
 // const MONGODB_PORT = process.env.MONGODB_PORT || 27017;
@@ -28,7 +34,11 @@ app.use(bodyParser.json());
 
 app.get('/', (req, res) => {
   res.render(`index`);
-})
+});
+
+app.get('/cool', function(req, res) {
+  res.send(cool());
+});
 
 app.use(routes);
 
