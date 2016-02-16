@@ -14,7 +14,7 @@ app.set(PORT, (process.env.PORT || 5000)); // eslint-disable-line no-magic-numbe
 app.use(express.static(__dirname + '/public'));
 
 const MONGODB_HOST = process.env.MONGODB_HOST || 'localhost';
-const MONGODB_PORT = process.env.MONGODB_PORT || 11268;
+const MONGODB_PORT = process.env.MONGODB_PORT || 27017; // eslint-disable-line no-magic-numbers
 const MONGODB_USER = process.env.MONGODB_USER || '';
 const MONGODB_PASS = process.env.MONGODB_PASS || '';
 const MONGODB_NAME = process.env.MONGODB_NAME || 'markitapp';
