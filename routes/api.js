@@ -2,9 +2,10 @@
 
 const express = require('express');
 const router = express.Router();
+const ctrl = require('../controllers/quote');
 
-router.get('/api', (req, res) => {
-  res.header('Access-Control-Allow-Origin', '*');
-  res.send({hello: 'world'});
-});
+router.get(`/quote`, ctrl.index);
 
+router.post(`/quote`, ctrl.findstock);
+
+module.exports = router;
