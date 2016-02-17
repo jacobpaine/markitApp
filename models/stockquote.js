@@ -5,7 +5,7 @@ module.exports = mongoose.model('stock',
   mongoose.Schema({
     name: String,
     symbol: String,
-    price: Number, //*will change
+    price: Number, // *will change
     qty: Number
   })
 );

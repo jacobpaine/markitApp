@@ -1,10 +1,10 @@
 'use strict';
-//Require request for http requests
+// Require request for http requests
 const request = require('request');
-//stockquote is the model upon which data is organized (?)
+// stockquote is the model upon which data is organized (?)
 const Stock = require('../models/stockquote');
 
-//From the route, this index method renders quote.jade
+// From the route, this index method renders quote.jade
 module.exports.index = (req, res) => {
   res.render('quote');
 };
