@@ -24,11 +24,11 @@ module.exports.findstock = (req, res) => {
       symbol: thing.Symbol,
       price: thing.LastPrice
     });
-//Logs to check functionality.
+// Logs to check functionality.
     const stockName = thing.Name;
     console.log(stockName);
     console.log(myStock);
-//myStock gets sent to quotedetails.jade (lines 10-16)
+// myStock gets sent to quotedetails.jade (lines 10-16)
     res.render('quotedetails', myStock);
 
 // Useful Information: Not being used.
