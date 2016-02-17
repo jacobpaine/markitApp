@@ -10,7 +10,7 @@ module.exports.index = (req, res) => {
 };
 
 module.exports.findstock = (req, res) => {
-// From jade, the req is pulling whatever was placed in the input field (quote.jade line 10).
+// From jade, the req is pulling whatever was placed in the input field (quote.jade line 11).
   const symbol = req.body.sym;
 // Find correct API URL to get the correct JSON. Read the docs.
   const url = `http://dev.markitondemand.com/MODApis/Api/v2/Quote/json?symbol=${symbol}`;
@@ -18,7 +18,7 @@ module.exports.findstock = (req, res) => {
     if (err) throw err;
 // Parse the body into a JSON to be used later objects.
     const thing = JSON.parse(body);
-// Oh look! An object! That is pulling Name, Symbol and LastPrice from the API and sticking it into the model as name, symbol, price.
+// Oh look! An object! Glad we parsed the body! myStock is pulling Name, Symbol and LastPrice from the API and sticking it into the model as name, symbol, price.
     const myStock = new Stock({
       name: thing.Name,
       symbol: thing.Symbol,
@@ -27,7 +27,7 @@ module.exports.findstock = (req, res) => {
 // Logs to check functionality.
     const stockName = thing.Name;
     console.log(stockName);
-    console.log("myStock", myStock);
+    console.log("myStock: Searched for", myStock);
 
 // Render puts the info onto quotedetails.jade, putting Name, Symbol and LastPrice into the jade using the matching name (e.g. name, symbol, price)
     res.render('quotedetails', {

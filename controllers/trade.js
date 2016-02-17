@@ -14,11 +14,16 @@ module.exports.buy = (req, res) => {
     price: req.body.price,
     qty: req.body.qty
   });
-
+// Save to the database! Then render to the indexbuy.jade.
   console.log("buymyStock", myStock);
   myStock.save((err, savedStock) => {
     if (err) throw err;
     console.log("savedStock", savedStock);
-    res.render('index');
+    res.render('indexbuy', {
+      savedStockName: savedStock.name,
+      savedStockSym: savedStock.symbol,
+      savedStockPrice: savedStock.price,
+      savedStockQty: savedStock.qty
+    });
   });
 };
