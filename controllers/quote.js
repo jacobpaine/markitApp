@@ -28,9 +28,7 @@ module.exports.findstock = (req, res) => {
     const stockName = thing.Name;
     console.log(stockName);
     console.log("myStock", myStock);
-// myStock gets sent to quotedetails.jade (lines 10-16)
 
-// Useful Information: To be used.
 // Render puts the info onto quotedetails.jade, putting Name, Symbol and LastPrice into the jade using the matching name (e.g. name, symbol, price)
     res.render('quotedetails', {
       name: thing.Name,

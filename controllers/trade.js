@@ -1,5 +1,5 @@
 'use strict';
-const request = require('request');
+// const request = require('request');
 const Stock = require('../models/stockquote');
 
 module.exports.index = (req, res) => {
@@ -16,10 +16,9 @@ module.exports.buy = (req, res) => {
   });
 
   console.log("buymyStock", myStock);
-  myStock.save((err, savedStock) =>{
+  myStock.save((err, savedStock) => {
     if (err) throw err;
     console.log("savedStock", savedStock);
     res.render('index');
   });
 };
-
