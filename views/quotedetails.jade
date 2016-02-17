@@ -3,17 +3,18 @@ extends ./quote.jade
 
 block details
   .container
+  //- This form uses action to POST all the form data to the root page (i.e. '/')
   form(method='POST', action='/')
     h2 Stock Details:
     .form-group
       label Symbol:
-      input(type='text', name='sym' value='#{myStock.symbol}' readonly)
+      input(type='text', name='sym' value='#{symbol}' readonly)
     .form-group
       label Company Name:
-      input(type='text', name='name' value='#{myStock.name}' readonly)
+      input(type='text', name='name' value='#{name}' readonly)
     .form-group
       label Price:
-      input(type='text', name='price' value='#{myStock.price}' readonly)
+      input(type='text', name='price' value='#{price}' readonly)
 
     h2 Buy/Sell this Stock
     .form-group

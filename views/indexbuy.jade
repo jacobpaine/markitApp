@@ -1,0 +1,16 @@
+//- extends ../templates/index.jade
+extends ./index.jade
+
+block buy
+  .container
+  //- This form uses action to POST all the form data to the root page (i.e. '/')
+  form(method='POST', action='/')
+    h2 Stock Details BOUGHT:
+    .form-group
+      p Symbol: #{savedStockSym}
+    .form-group
+      p Company Name: #{savedStockName}
+    .form-group
+      p Price: #{savedStockPrice}
+    .form-group
+      p Quantity: #{savedStockQty}
