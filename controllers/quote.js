@@ -1,7 +1,7 @@
 'use strict';
 // Require request for http requests
 const request = require('request');
-// stockquote is the model upon which data is organized (?)
+// stockquote is the model upon which data is organized (i.e. the model)
 const Stock = require('../models/stockquote');
 
 // From the route (api.js), this index method renders quote.jade
@@ -27,17 +27,15 @@ module.exports.findstock = (req, res) => {
 // Logs to check functionality.
     const stockName = thing.Name;
     console.log(stockName);
-    console.log(myStock);
+    console.log("myStock", myStock);
 // myStock gets sent to quotedetails.jade (lines 10-16)
-    res.render('quotedetails', myStock);
 
-// Useful Information: Not being used.
+// Useful Information: To be used.
 // Render puts the info onto quotedetails.jade, putting Name, Symbol and LastPrice into the jade using the matching name (e.g. name, symbol, price)
-    // res.render('quotedetails', {
-    //   name: thing.Name,
-    //   symbol: thing.Symbol,
-    //   price: thing.LastPrice
-    // });
-
+    res.render('quotedetails', {
+      name: thing.Name,
+      symbol: thing.Symbol,
+      price: thing.LastPrice
+    });
   });
 };
