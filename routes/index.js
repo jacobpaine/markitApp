@@ -1,5 +1,5 @@
 'use strict';
-
+// This code is essentially an index of routes. It's simply to keep the code minimal.
 const express = require('express');
 const router = express.Router();
 

@@ -5,13 +5,13 @@ block content
   .container
     a(href='/') Back to Root
     h1 Get Quotes
-  //- POST sends data, caught by POST method in routers/api.js (line 9) sends it to the controller.
+    p Type in the stock symbol of the company you wish to get a quote from.
+  //- POST sends data, caught by POST method in routers/api.js (line 9) sends it to the controllers/quote.js .findstock method.
   form(method='POST')
     .form-group
       label Stock Symbol
-      input(type='text', name='sym', placeholder='XXXX')
+      input(type='text', name='sym', placeholder='ZEUS')
     .form-group
       input(type='submit', value='Find Stock Details')
 
   block details
-    p Type in the stock symbol of the company you wish to get a quote from.

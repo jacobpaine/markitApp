@@ -1,15 +1,13 @@
 //- extends ../templates/index.jade
 extends ./index.jade
 
-  .container
+block buy
   //- This form uses action='/' to POST all the form data to the root page (i.e. the '/')
-  form(method='POST', action='/')
-    h2 Stock Details BOUGHT:
-    .form-group
-      p Symbol: #{stockpileSym}
-    .form-group
-      p Company Name: #{stockpileName}
-    .form-group
-      p Price: #{stockpilePrice}
-    .form-group
-      p Quantity: #{stockpileQty}
+
+  h2 Stock Details STOCKPILE:
+  //- Oh Jade! You have an iterator for me. For each val (some variable) located in stocks ()
+  each val in stocks
+    p Symbol: #{val.symbol}
+    p Company Name: #{val.name}
+    p Price: #{val.price}
+    p Quantity: #{val.qty}
